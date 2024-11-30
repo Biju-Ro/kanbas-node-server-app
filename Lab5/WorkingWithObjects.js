@@ -17,9 +17,16 @@
     app.get("/lab5/assignment", (req, res) => {
         res.json(assignment);
     });
+    
 
     app.get("/lab5/assignment/title", (req, res) => {
         res.json(assignment.title);
+    });
+
+    app.get("/lab5/assignment/title/:newTitle", (req, res) => {
+        const { newTitle } = req.params;
+        assignment.title = newTitle;
+        res.json(assignment);
     });
 
     app.get("/lab5/module", (req, res) => {
@@ -44,11 +51,7 @@
         res.json(assignment.completed);
     });
 
-    app.get("/lab5/assignment/title/:newTitle", (req, res) => {
-        const { newTitle } = req.params;
-        assignment.title = newTitle;
-        res.json(assignment);
-    });
+
 
     app.get("/lab5/assignment/score/:newScore", (req, res) => {
         const { newScore } = req.params;
