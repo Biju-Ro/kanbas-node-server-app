@@ -8,6 +8,7 @@ const schema = new mongoose.Schema(
     available_date: Date,
     available_until_date: Date,
     description: String,
+    
     course: { type: mongoose.Schema.Types.ObjectId, ref: "CourseModel" },
   },
   { collection: "assignments" }
